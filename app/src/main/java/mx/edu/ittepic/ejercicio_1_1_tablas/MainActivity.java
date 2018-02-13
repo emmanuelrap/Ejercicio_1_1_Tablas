@@ -14,11 +14,11 @@ public class MainActivity extends AppCompatActivity {
     TextView avance;
     Button boton;
 
-    int seleccion,res;
+    int res,num;
 
     String concatenar,total;
     ListView lista;
-    String [] arreglo = new String[21];
+    String [] arreglo = new String[11];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         lista = findViewById(R.id.listView);
 
-        seleccion=0;
+        num=0;
         concatenar="";
         total="";
 
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 total="";
                 concatenar="";
                 avance.setText(""+progress);
-                seleccion = progress;
+                num = progress;
             }
 
             @Override
@@ -61,9 +61,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                for (int i=0;i<=20;i++){
-                    res=seleccion*i;
-                    arreglo[i]=""+seleccion+"X"+i+"="+res;
+                for (int i=0;i<=10;i++){
+                    res=num*i;
+                    arreglo[i]=""+num+"X"+i+"="+res;
                 }
                 lista.setAdapter(adapter);
 
